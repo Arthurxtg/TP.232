@@ -196,27 +196,27 @@ elif page == PAGES[1]:
     if submitted:
         errors = []
     
-    if not nom.strip():
-        errors.append("❌ Le nom du patient est obligatoire.")
-    if not adresse.strip():
-        errors.append("❌ L'adresse est obligatoire.")
-    if not symptomes:
-        errors.append("❌ Veuillez sélectionner au moins un symptôme.")
-    if age == 0:
-        errors.append("❌ L'âge doit être supérieur à 0.")
+        if not nom.strip():
+            errors.append("❌ Le nom du patient est obligatoire.")
+        if not adresse.strip():
+            errors.append("❌ L'adresse est obligatoire.")
+        if not symptomes:
+            errors.append("❌ Veuillez sélectionner au moins un symptôme.")
+        if age == 0:
+            errors.append("❌ L'âge doit être supérieur à 0.")
 
-    if errors:
-        for err in errors:
-            st.error(err)
-    else:
-        maladie, taux = diagnostiquer(symptomes)
-        if maladie:
-            st.success(f"### DIAGNOSTIC PROBABLE : **{maladie.upper()}**")
-            st.write(f"Taux de concordance : **{taux:.0f} %**")
-            save_patient(nom.strip(), age, tel.strip(), adresse.strip(), maladie, taux)
-            st.balloons()
+        if errors:
+            for err in errors:
+                st.error(err)
         else:
-            st.warning("⚠️ Aucune maladie correspondante trouvée.")
+            maladie, taux = diagnostiquer(symptomes)
+            if maladie:
+                st.success(f"### DIAGNOSTIC PROBABLE : **{maladie.upper()}**")
+                st.write(f"Taux de concordance : **{taux:.0f} %**")
+                save_patient(nom.strip(), age, tel.strip(), adresse.strip(), maladie, taux)
+                st.balloons()
+            else:
+                st.warning("⚠️ Aucune maladie correspondante trouvée.")
 # ─────────────────────────────────────────────
 # PAGE 3 : ANALYSES STATISTIQUES
 # ─────────────────────────────────────────────
