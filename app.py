@@ -6,7 +6,7 @@ import plotly.express as px
 # ─────────────────────────────────────────────
 # CONFIGURATION DE LA PAGE
 # ─────────────────────────────────────────────
-st.set_page_config(page_title="HOSPITAL ANALYTICS • PRO", layout="wide")
+st.set_page_config(page_title="HOSPITAL ANALYTICS • PRO BY arthur_lontsi", layout="wide")
  
 st.markdown("""
 <style>
@@ -20,7 +20,7 @@ st.markdown("""
 /* Grand titre */
 .huge-title {
     font-size: 72px;
-    font-weight: 800;
+    font-weight: 700;
     color: white;
     line-height: 1.1;
     margin: 50px 0 20px 20px;
@@ -65,6 +65,19 @@ st.markdown("""
     padding: 20px;
     margin-bottom: 15px;
 }
+/* =======================================================
+   MEDIA QUERIES - ADAPTATION ANDROID & IPHONE
+   ======================================================= */
+@media (max-width: 768px) {
+
+    /* Titre principal */
+    .huge-title {
+        font-size: 32px !important;
+        margin-left: 10px !important;
+        margin-top: 20px !important;
+        white-space: normal !important; /* Permet le retour à la ligne */
+        text-align: center;
+    }
            
 /* Labels des champs de formulaire */
 .stTextInput label,
@@ -166,7 +179,7 @@ if page == PAGES[0]:
         )
         st.markdown(
             "<p style='font-size:1.2em; opacity:0.8; margin-left:20px;'>"
-            "Plateforme de collecte  et de Diagnostic de données ."
+            "Plateforme de collecte  et d'analyse de données ."
             "</p>",
             unsafe_allow_html=True
         )
