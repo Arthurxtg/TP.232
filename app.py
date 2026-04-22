@@ -42,6 +42,17 @@ st.markdown("""
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+/* 2. Suppression des icônes Streamlit/GitHub */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+[data-testid="stStatusWidget"] {visibility: hidden;}
+.block-container {padding-top: 2rem !important;}
+
+/* Optionnel : Supprimer l'espace vide créé par le header masqué */
+.block-container {
+    padding-top: 2rem !important;
+}
  
 /* Boutons */
 .stButton > button {
